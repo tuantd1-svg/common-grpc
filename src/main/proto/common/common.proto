@@ -1,0 +1,87 @@
+syntax = "proto3";
+
+package com.example.commongrpc;
+
+option java_package = "com.example.commongrpc.common";
+
+option java_multiple_files = true;
+
+message CommonResponseSocket{
+  string responseId =1 ;
+  string responseTime = 2;
+  string responseCode = 3;
+  string responseMessage = 4;
+
+}
+message CommonResponseStoreEcrm{
+  string errorCode =1;
+  string errorMessage = 2;
+}
+
+message UserBanking{
+  string clientCode =1 ;
+  string username = 2;
+  string acctType = 3;
+}
+message Extras{
+  string institution = 1;
+  string branch = 2;
+  string clientCategory =3;
+  string clientType = 4;
+  string productCategory = 5;
+  string redefinedProductCategory = 6;
+  string contractCategory = 7;
+  string parentProduct = 8;
+  string mainProductCorrected = 9;
+  string mainProductIDT = 10;
+  string product = 11;
+  string contractSubtype = 12;
+  string reportType = 13;
+  string role = 14;
+  string icon = 15;
+  string leaf = 16;
+  string client = 17;
+  string contractNumber = 18;
+  string safeContractNumber = 19;
+  string contractName = 20;
+  string contractLevel = 21;
+  string parentContract = 22;
+  string billingContract = 23;
+  string topContract = 24;
+  string cBSNumber = 25;
+  string openDate = 26;
+  string checkUsage = 27;
+  string currency = 28;
+  string available = 29;
+  string balance = 30;
+  string creditLimit = 31;
+  string addLimit = 32;
+  string blocked = 33;
+  string totalDue = 34;
+  string pastDue = 35;
+  string shadowAuthLimit = 36;
+  string lastBillingDate = 37;
+  string nextBillingDate = 38;
+  string addParmString = 39;
+  string status = 40;
+  string statusCode = 41;
+  string lastApplicationDate = 42;
+  string lastApplicationOfficer =43;
+  string lastApplicationStatus = 44;
+  string lastActivityDate = 45;
+  string ready = 46;
+  string amendmentDate = 47;
+  string lastScan = 48;
+  string amendmentOfficer = 49;
+  string id = 50;
+  string clientFullName = 51;
+  string expirationDate = 52;
+  string cardStatus = 53;
+  string embossedFirstName = 54;
+  string embossedLastName = 55;
+  string cardDateOpen = 56;
+  string productionStatus = 57;
+  string productCode = 58;
+  string clientNumber = 59;
+  string phoneMobile = 60;
+}

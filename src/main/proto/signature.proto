@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+package com.example.commongrpc;
+
+option java_package = "com.example.commongrpc.signature";
+
+option java_multiple_files = true;
+
+message VerifySignatureRequest{
+  string message = 1;
+  string channel = 2;
+  string signature = 3;
+}
+message VerifySignatureResponse{
+  bool message = 1;
+}
+
+message InitSignatureRequest{
+  string message = 1;
+  string channel = 2;
+}
+message InitSignatureResponse{
+  string message = 1;
+}
+message EncryptRequest{
+  string channel =1;
+  string data =2;
+}
+message EncryptResponse{
+  string data = 1;
+}
+message DecryptRequest{
+  string data = 1;
+  string channel = 2;
+}
+message DecryptResponse{
+ string data = 1;
+}
+service SignatureService {
+  rpc verifySignature(VerifySignatureRequest) returns (VerifySignatureResponse){};
+  rpc initSignature(InitSignatureRequest) returns(InitSignatureResponse){};
+  rpc encryptData(EncryptRequest) returns(EncryptResponse){};
+  rpc decryptData(DecryptRequest) returns(DecryptResponse){};
+}

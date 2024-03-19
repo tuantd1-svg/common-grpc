@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package com.example.commongrpc;
+
+option java_package = "com.example.commongrpc.coreeoc";
+
+option java_multiple_files = true;
+
+message VerifyAcctNoRequest{
+  string acctNo =1 ;
+  string ownerName = 2;
+  string partnerId = 3;
+}
+message VerifyAcctNoResponse{
+  string errorCode =1;
+  string clientCode = 2;
+  string acctType = 3;
+}
+service CoreEOCService {
+  rpc verifyAcctNo(VerifyAcctNoRequest) returns (VerifyAcctNoResponse){};
+}

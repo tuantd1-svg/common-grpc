@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package com.example.commongrpc;
+
+option java_package = "com.example.commongrpc.way4";
+
+option java_multiple_files = true;
+
+import "common/common.proto";
+
+message CardInfoRequest{
+  string requestId =1;
+  string contractNumber = 2;
+}
+message CardInfoResponse{
+  string responseId =1 ;
+  string responseTime = 2;
+  string responseCode = 3;
+  string responseMessage = 4;
+  Extras extras = 5;
+}
+service Way4Service{
+  rpc getInfoWay4(CardInfoRequest) returns (CardInfoResponse){};
+}
